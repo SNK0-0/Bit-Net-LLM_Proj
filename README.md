@@ -6,17 +6,6 @@ This repository serves as a laboratory for understanding Extreme LLM Quantizatio
 
 ---
 
-## 📂 Directory Guide (Why It Is Structured This Way)
-
-To maintain scientific rigor and keep the code readable, this repository avoids "monolithic" scripts (dumping everything into one file) and instead uses a modular architecture:
-
-* **`configs/`**: Holds configuration files (like `train_shakespeare_char.py`). These contain no active code, just hyperparameters (learning rate, iterations, batch size).
-* **`modules/`**: Holds custom mathematical operations. This is where `bitlinear.py` lives, containing the quantization logic and Straight-Through Estimator.
-* **`scripts/`**: The execution engines. These scripts (`train_bitnet.py`, `generate.py`) import the modules and configs to actually run the training and inference loops.
-* **`notebooks/`**: The active laboratory. Holds the Colab `.ipynb` file used to test logic and generate the core architecture scripts.
-
----
-
 ## 🔬 Architecture & Methodology
 
 The core of the architecture is the custom `BitLinear` module, which replaces standard `nn.Linear` layers and enforces two strict rules during the forward pass:
