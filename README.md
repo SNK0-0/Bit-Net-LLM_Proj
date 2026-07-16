@@ -1,4 +1,4 @@
-# 🧠 Bit-Net-LLM_Proj
+# Bit-Net-LLM_Proj
 
 A modular, scientifically controlled implementation of the 1.58-bit ternary weight architecture (BitNet b1.58) applied to a character-level nanoGPT model. 
 
@@ -6,7 +6,7 @@ This repository serves as a laboratory for understanding Extreme LLM Quantizatio
 
 ---
 
-## 🔬 Architecture & Methodology
+## Architecture & Methodology
 
 The core of the architecture is the custom `BitLinear` module, which replaces standard `nn.Linear` layers and enforces two strict rules during the forward pass:
 
@@ -18,7 +18,7 @@ To solve the zero-gradient problem caused by the non-differentiable `round()` st
 
 ---
 
-## 📊 Benchmarks & Results
+## Benchmarks & Results
 
 To measure the impact of ternary quantization, a strict control test was performed. Both models were trained on the Shakespeare character dataset for exactly 1,500 iterations at a `1e-3` learning rate on an NVIDIA T4 GPU.
 
@@ -32,7 +32,7 @@ To measure the impact of ternary quantization, a strict control test was perform
 
 ---
 
-## 🚀 Usage
+## Usage
 
 **1. Train the baseline FP16 model:**
 ```bash
@@ -52,7 +52,7 @@ python scripts/generate.py
 
 ---
 
-## 🗺️ Development Roadmap
+## Development Roadmap
 
 - [x] **Phase 1:** Establish FP16 continuous-weight baseline metrics.
 - [x] **Phase 2:** Architect the `BitLinear` module (Ternary weights, 8-bit activations, STE).
